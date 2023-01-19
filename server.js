@@ -11,6 +11,9 @@ const app = express();
 connectDB();
 mongoose.set("strictQuery", false);
 
+// Init middleware
+app.use(express.json({ extended: false }));
+
 app.get("/", (req, res) => {
   res.send("API Running");
 });
