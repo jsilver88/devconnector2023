@@ -1,5 +1,11 @@
 import express from "express";
+import mongoose from "mongoose";
+import connectDB from "./config/db.js";
 const app = express();
+
+// Connect Database
+connectDB();
+mongoose.set("strictQuery", false);
 
 app.get("/", (req, res) => {
   res.send("API Running");
