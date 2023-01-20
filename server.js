@@ -7,9 +7,9 @@ import profileRoutes from "./routes/api/profile.js";
 import postRoutes from "./routes/api/posts.js";
 const app = express();
 
+mongoose.set("strictQuery", false);
 // Connect Database
 connectDB();
-mongoose.set("strictQuery", false);
 
 // Init middleware
 app.use(express.json({ extended: false }));
