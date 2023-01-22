@@ -8,6 +8,7 @@ import postRoutes from "./routes/api/posts.js";
 const app = express();
 
 mongoose.set("strictQuery", false);
+mongoose.set("strictPopulate", false);
 // Connect Database
 connectDB();
 
