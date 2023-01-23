@@ -1,4 +1,7 @@
 {
   "mongoURI": "mongodb+srv://jaredjs:jaredjs1@cluster0.5hae9.mongodb.net/devconnector?retryWrites=true&w=majority",
-  "jwtSecret": "mysecrettoken"
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "89772b562b9f84593661",
+  "githubClientSecret": "892f0c1cd358ecb8da993ebaf84c6aa518fe93d2",
+  "githubToken": "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"
 }
