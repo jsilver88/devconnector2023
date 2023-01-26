@@ -27,10 +27,8 @@ const App = () => {
       <Router>
         <>
           <Navbar />
-          <section className="container">
-            <Alert />
-          </section>
 
+          <Alert />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/register" element={<Register />} />
