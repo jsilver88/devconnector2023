@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { connect } from "react-redux";
+import { login } from "../../actions/auth";
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,8 +19,13 @@ const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Success");
+    login(email, password);
   };
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" />;
+  }
 
   return (
     <>
@@ -57,4 +64,9 @@ const Login = () => {
     </>
   );
 };
-export default Login;
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);
