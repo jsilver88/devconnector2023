@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCode,
+  faSignOutAlt,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../actions/auth";
@@ -7,6 +11,12 @@ import { logout } from "../../actions/auth";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
+      <li>
+        <Link to="/dashboard">
+          {" "}
+          <FontAwesomeIcon icon={faUser} /> <span>Dashboard</span>
+        </Link>
+      </li>
       <li>
         <a onClick={logout} href="#!">
           <FontAwesomeIcon icon={faSignOutAlt} />{" "}
