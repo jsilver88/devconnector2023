@@ -5,8 +5,10 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import DashboardActions from "./DashboardActions";
+import Experience from "./Experience";
 import { getCurrentProfile } from "../../actions/profile";
 import { Link } from "react-router-dom";
+import Education from "./Education";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -28,6 +30,8 @@ const Dashboard = ({
       {profile !== null ? (
         <>
           <DashboardActions />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
         </>
       ) : (
         <>
